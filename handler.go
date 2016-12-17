@@ -63,7 +63,7 @@ func log(ctx context.Context, info *grpc.UnaryServerInfo, start time.Time, grpcE
 	service := ""
 	method := ""
 	fullMethod := info.FullMethod
-	fullMethodSlice := strings.Split("/", fullMethod)
+	fullMethodSlice := strings.Split(fullMethod, "/")
 	if len(fullMethodSlice) == 3 {
 		service = fullMethodSlice[1]
 		method = fullMethodSlice[2]
